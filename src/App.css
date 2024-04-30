@@ -1,0 +1,27 @@
+#calculator {
+  display: flex;
+}
+
+#numberPad {
+  display: block;
+}
+
+#numberPad button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.row4 {
+  text-align: center;
+}
+
+#operator-buttons {
+  display: grid;
+}
+
+#operator-buttons button {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
