@@ -24,8 +24,10 @@ class App extends React.Component {
         } else {
           if (operator.length === 0) {
             firstNum += buttonVal;
+            document.getElementById('output').innerHTML = firstNum;
           } else {
             secondNum += buttonVal;
+            document.getElementById('output').innerHTML = secondNum;
           }
         }
       }
@@ -56,6 +58,7 @@ class App extends React.Component {
               }
             }
           }
+          document.getElementById('output').innerHTML = solution;
 
           firstNum = '';
           secondNum = '';
@@ -66,35 +69,37 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <div id="calculator-div">
+          <h3 id='output'>0</h3>
+          <div id="calculator-buttons">
+            <div id="numberPad">
+              <div className="row1">
+                <button type="button" value={1} onClick={e => onButton(e)}>1</button>
+                <button type="button" value={2} onClick={e => onButton(e)}>2</button>
+                <button type="button" value={3} onClick={e => onButton(e)}>3</button>
+              </div>
+              <div className="row2">
+                <button type="button" value={4} onClick={e => onButton(e)}>4</button>
+                <button type="button" value={5} onClick={e => onButton(e)}>5</button>
+                <button type="button" value={6} onClick={e => onButton(e)}>6</button>
+              </div>
+              <div className="row3">
+                <button type="button" value={7} onClick={e => onButton(e)}>7</button>
+                <button type="button" value={8} onClick={e => onButton(e)}>8</button>
+                <button type="button" value={9} onClick={e => onButton(e)}>9</button>
+              </div>
+              <div className="row4">
+                <button type="button" value={0} onClick={e => onButton(e)}>0</button>
+              </div>
+            </div>
 
-        <div id="calculator">
-          <div id="numberPad">
-            <div className="row1">
-              <button type="button" value={1} onClick={e => onButton(e)}>1</button>
-              <button type="button" value={2} onClick={e => onButton(e)}>2</button>
-              <button type="button" value={3} onClick={e => onButton(e)}>3</button>
+            <div id='operator-buttons'>
+              <button type="button" value={'+'} onClick={e => onButton(e)}>+</button>
+              <button type="button" value={'-'} onClick={e => onButton(e)}>-</button>
+              <button type="button" value={'*'} onClick={e => onButton(e)}>*</button>
+              <button type="button" value={'/'} onClick={e => onButton(e)}>/</button>
+              <button type="button" value={'='} onClick={e => onButton(e)}>=</button>
             </div>
-            <div className="row2">
-              <button type="button" value={4} onClick={e => onButton(e)}>4</button>
-              <button type="button" value={5} onClick={e => onButton(e)}>5</button>
-              <button type="button" value={6} onClick={e => onButton(e)}>6</button>
-            </div>
-            <div className="row3">
-              <button type="button" value={7} onClick={e => onButton(e)}>7</button>
-              <button type="button" value={8} onClick={e => onButton(e)}>8</button>
-              <button type="button" value={9} onClick={e => onButton(e)}>9</button>
-            </div>
-            <div className="row4">
-              <button type="button" value={0} onClick={e => onButton(e)}>0</button>
-            </div>
-          </div>
-
-          <div id='operator-buttons'>
-            <button type="button" value={'+'} onClick={e => onButton(e)}>+</button>
-            <button type="button" value={'-'} onClick={e => onButton(e)}>-</button>
-            <button type="button" value={'*'} onClick={e => onButton(e)}>*</button>
-            <button type="button" value={'/'} onClick={e => onButton(e)}>/</button>
-            <button type="button" value={'='} onClick={e => onButton(e)}>=</button>
           </div>
         </div>
       </div>

@@ -1,9 +1,17 @@
-#calculator {
+#calculator-div {
+  display: inline-block;
+}
+
+h3 {
+  text-align: right;
+}
+
+#calculator-buttons {
   display: flex;
 }
 
 #numberPad {
-  display: block;
+  display: inline-block;
 }
 
 #numberPad button {
