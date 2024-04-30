@@ -37,6 +37,10 @@ class App extends React.Component {
         if (buttonVal !== '=') {
           operator = buttonVal;
 
+          if (firstNum.length === 0) {
+            firstNum = solution;
+          }
+
         } else {
           // Calculating new expression
           if (firstNum && secondNum && operator) {
@@ -58,6 +62,7 @@ class App extends React.Component {
               }
             }
           }
+          solution = parseFloat(solution.toPrecision(3));
           document.getElementById('output').innerHTML = solution;
 
           firstNum = '';
@@ -65,6 +70,14 @@ class App extends React.Component {
           operator = '';
         }
       }
+    }
+
+    function onClickClear() {
+      firstNum = '';
+      secondNum = '';
+      operator = '';
+      solution = '';
+      document.getElementById('output').innerHTML = '0';
     }
 
     return (
@@ -90,6 +103,9 @@ class App extends React.Component {
               </div>
               <div className="row4">
                 <button type="button" value={0} onClick={e => onButton(e)}>0</button>
+              </div>
+              <div className="row5">
+                <button type="button" onClick={() => onClickClear()}>Clear</button>
               </div>
             </div>
 
