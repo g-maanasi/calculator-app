@@ -62,7 +62,9 @@ class App extends React.Component {
               }
             }
           }
-          solution = parseFloat(solution.toPrecision(3));
+          if (solution !== 'NaN') {
+            solution = parseFloat(solution.toPrecision(3));
+          }
           document.getElementById('output').innerHTML = solution;
 
           firstNum = '';
